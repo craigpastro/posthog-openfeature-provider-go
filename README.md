@@ -16,8 +16,6 @@ import (
 	"github.com/posthog/posthog-go"
 )
 
-const postHogAPIKey = "<POSTHOG_API_KEY>"
-
 func main() {
     phClient, err := posthog.NewWithConfig(
 		"<POSTHOG_API_KEY>",
@@ -26,7 +24,7 @@ func main() {
 			Endpoint:       "https://app.posthog.com",
 		},
 	)
-    if err != nil {
+	if err != nil {
 		panic(err)
 	}
 	defer phClient.Close()
