@@ -17,7 +17,7 @@ import (
 )
 
 func main() {
-    phClient, err := posthog.NewWithConfig(
+	phClient, err := posthog.NewWithConfig(
 		"<POSTHOG_API_KEY>",
 		posthog.Config{
 			PersonalApiKey: "<PERSONAL_API_KEY>",
