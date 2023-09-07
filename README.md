@@ -11,7 +11,7 @@ import (
 	"context"
 	"fmt"
 
-	pgprovider "github.com/craigpastro/posthog-openfeature-provider-go"
+	phprovider "github.com/craigpastro/posthog-openfeature-provider-go"
 	"github.com/open-feature/go-sdk/pkg/openfeature"
 	"github.com/posthog/posthog-go"
 )
@@ -29,7 +29,7 @@ func main() {
 	}
 	defer phClient.Close()
 
-	err = openfeature.SetProvider(pgprovider.New(phClient))
+	err = openfeature.SetProvider(phprovider.New(phClient))
 	if err != nil {
 		panic(err)
 	}
