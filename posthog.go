@@ -81,9 +81,11 @@ func (p *Provider) BooleanEvaluation(
 	return openfeature.BoolResolutionDetail{
 		Value: respBool,
 		ProviderResolutionDetail: openfeature.ProviderResolutionDetail{
-			// Note: we don't actually know if this was a TargetingMatchReason,
-			// there is no way to tell if the flag exists or not.
-			Reason: openfeature.TargetingMatchReason,
+			// Note: I would love to return openfeature.TargetingMatchReason
+			// here, but we don't actually know if this was a match. The flag
+			// may not even exist and we would still get back false. See 3.
+			// in the comment above.
+			Reason: openfeature.UnknownReason,
 		},
 	}
 }
