@@ -8,7 +8,7 @@ import (
 	"github.com/posthog/posthog-go"
 )
 
-const DistinctIdKey = openfeature.TargetingKey
+const distinctIdKey = openfeature.TargetingKey
 
 var _ openfeature.FeatureProvider = (*Provider)(nil)
 
@@ -160,7 +160,7 @@ func (p *Provider) ObjectEvaluation(
 
 func extractDistinctID(evalCtx openfeature.FlattenedContext) (string, *openfeature.ProviderResolutionDetail) {
 	for key, val := range evalCtx {
-		if key == DistinctIdKey {
+		if key == distinctIdKey {
 			v, ok := val.(string)
 			if !ok {
 				return "", &openfeature.ProviderResolutionDetail{
