@@ -35,7 +35,7 @@ func TestBooleanEvaluation(t *testing.T) {
 	client := New(mockPhClient)
 
 	ctx := context.Background()
-	evalCtx := map[string]any{DistinctIdKey: "my_distinct_id"}
+	evalCtx := map[string]any{distinctIdKey: "my_distinct_id"}
 
 	t.Run("noDistinctIdFails", func(t *testing.T) {
 		detail := client.BooleanEvaluation(ctx, "flag", false, openfeature.FlattenedContext{})
