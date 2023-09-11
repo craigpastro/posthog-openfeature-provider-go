@@ -36,7 +36,7 @@ func main() {
 
 	client := openfeature.NewClient("app")
 
-	v2_enabled, err := client.BooleanValue(
+	v2Enabled, err := client.BooleanValue(
 		context.Background(),
 		"v2_enabled",
 		false,
@@ -46,7 +46,7 @@ func main() {
 		panic(err)
 	}
 
-	if v2_enabled {
+	if v2Enabled {
 		fmt.Println("v2 is enabled")
 	} else {
 		fmt.Println("v2 is NOT enabled")
