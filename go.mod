@@ -3,7 +3,7 @@ module github.com/craigpastro/posthog-openfeature-provider-go
 go 1.20
 
 require (
-	github.com/open-feature/go-sdk v1.7.0
+	github.com/open-feature/go-sdk v1.8.0
 	github.com/posthog/posthog-go v0.0.0-20230801140217-d607812dee69
 	github.com/stretchr/testify v1.8.4
 	go.uber.org/mock v0.2.0
